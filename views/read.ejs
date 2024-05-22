@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Serverside Rendering</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class=" w-full bg-zinc-900 p-10 text-white">
+      <div class="nav mb-10">
+        <a href="/" class="text-blue-500">Home</a>
+      </div>
+      <h1 class="text-3xl mb-3 tracking-tighter">All User</h1>
+      <div class="flex flex-wrap w-full gap-5">
+        <%users.forEach(function(users) {%>
+        <div class="w-72 user p-4 bg-zinc-800 rounded-lg">
+          <div class="w-full h-60 rounded-lg bg-zinc-700 overflow-hidden object-cover">
+            <img src="<%=users.image%>" alt="" srcset="">
+          </div>
+          <h3 class="tracking-tighter mt-3 text-xl"><%=users.name%></h3>
+          <h5 class="text-zinc-500"><%=users.email%></h5>
+          <div class="flex flex-wrap mt-4 gap-2 justify-between items-center">
+            <a
+              href="/edit/<%=users._id%>"
+              class="bg-blue-600 px-5 py-2 rounded-lg outline-none cursor-pointer flex items-center justify-center"
+              >Edit User</a
+            >
+            <a
+              href="/delete/<%=users._id%>"
+              class="bg-red-600 px-5 py-2 rounded-lg outline-none cursor-pointer flex items-center"
+              >Delete User</a
+            >
+          </div>
+        </div>
+        <%})%>
+      </div>
+    </div>
+  </body>
+</html>
