@@ -2,7 +2,7 @@ const { default: mongoose } = require("mongoose");
 const moongoose = require("mongoose");
 
 moongoose.connect(
-  "mongodb+srv://smitjogani00:CqRhLNFq0ZFgm0ff@smit.resbqih.mongodb.net/CRUD"
+  "mongo connection string"
 );
 
 const userSchema = mongoose.Schema({
